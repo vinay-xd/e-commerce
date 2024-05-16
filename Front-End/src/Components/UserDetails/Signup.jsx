@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function Signup() {
   return (
     <>
-    <div className='Login-container w-[1305px] h-[781px] flex justify-between mt-[200px]'>
+    <div className='Login-container w-[1305px] h-[781px] flex justify-between mt-[200px] mx-auto'>
       <div className='LoginImgCon w-[805px] h-[781px]'>
         <img className='w-[100%] h-[100%] object-cover' src={Images.Login} alt="" />
       </div>
