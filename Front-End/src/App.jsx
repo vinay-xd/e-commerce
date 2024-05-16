@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { MyContext } from './Data/Contex.js'
+
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Login from './Components/UserDetails/Login.jsx'
 import Signup from './Components/UserDetails/Signup.jsx'
