@@ -7,6 +7,14 @@ import Signup from './Components/UserDetails/Signup.jsx'
 import Wishlist from './Components/SaveProduct/Wishlist.jsx';
 import Topbar from './Components/Topbar/Topbar';
 import * as Images from '../src/assets/Images/img.js'
+import Navbar from './Components/Navbar/Navbar.jsx'
+import Topbar from './Components/Topbar/Topbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './Components/UserDetails/Login.jsx'
+import Signup from './Components/UserDetails/Signup.jsx'
+import Footer from './Components/Footer/Footer.jsx';
+import About from './Components/Pages/About.jsx';
+
 
 function App() {
 
@@ -66,7 +74,8 @@ imgUrl:'C:\Users\acer\Desktop\Group\e-commerce\Front-End\src\assets\Images\Bag.p
   return (
     <>
 
-     
+      
+
       <Router>
       <Topbar />
       <Navbar />
@@ -78,7 +87,11 @@ imgUrl:'C:\Users\acer\Desktop\Group\e-commerce\Front-End\src\assets\Images\Bag.p
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/wishlist' element={<Wishlist data={data} />}  />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/about' element={<About />} />
         </Routes>
+        <Footer />  
 
       </Router>
 
@@ -86,4 +99,4 @@ imgUrl:'C:\Users\acer\Desktop\Group\e-commerce\Front-End\src\assets\Images\Bag.p
   )
 }
 
-export default App
+export default App;
