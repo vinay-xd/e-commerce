@@ -5,7 +5,9 @@ function Homepage() {
     <>
     <section className='sec1'>
         <div className='sec1Category'></div>
-        <div className='offerbar'></div>
+        <div className='offerbar'>
+          
+        </div>
     </section>
     </>
   )

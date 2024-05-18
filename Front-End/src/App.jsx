@@ -1,14 +1,13 @@
 import React from 'react'
 import './App.css'
-<<<<<<< HEAD
-import Navbar from './Components/Navbar/Navbar.jsx'
-=======
-import Navbar from './Components/Navbar/Navbar';
->>>>>>> 66d5412252dd472edf401be4106d1a40c9808027
+import Navbar from './Components/Navbar/Navbar'
 import Topbar from './Components/Topbar/Topbar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Components/UserDetails/Login.jsx'
 import Signup from './Components/UserDetails/Signup.jsx'
+import Cart from './Components/SaveProduct/Cart.jsx';
+import Contact from './Components/Pages/Contact.jsx';
+import Error from './Components/error/Error.jsx';
 
 function App() {
 
@@ -16,23 +15,18 @@ function App() {
   return (
     <>
 
-<<<<<<< HEAD
       
 
-=======
-     
->>>>>>> 66d5412252dd472edf401be4106d1a40c9808027
       <Router>
       <Topbar />
       <Navbar />
         <Routes>
-<<<<<<< HEAD
-=======
-          {/* <Route path='/' element={<Navbar />} />
-          <Route path='/' element={<Topbar />} /> */}
->>>>>>> 66d5412252dd472edf401be4106d1a40c9808027
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/*' element={<Error />} />
+          
         </Routes>
 
       </Router>
