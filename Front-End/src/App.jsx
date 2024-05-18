@@ -14,18 +14,15 @@ function App() {
 
   return (
     <>
-
-      
-
       <Router>
-      <Topbar />
-      <Navbar />
+        <Topbar />
+        <Navbar />
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/about' element={<About />} />
         </Routes>
-        <Footer />  
+        <Footer />
 
       </Router>
 
