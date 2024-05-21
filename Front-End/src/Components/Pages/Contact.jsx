@@ -42,7 +42,7 @@ function Contact() {
 
                         <div className='contFormCon w-[800px] py-10 px-8 shadow-md rounded'>
                             <div className='flex justify-between'>
-                                <input className='bg-[#f5f5f5] py-3 pl-4' type="text" name="" id="" placeholder='Your Name ' required />
+                                <input className='bg-[#f5f5f5] py-3 pl-4 CusPlaceHolder' type="text" name="" id="" placeholder='Your Name * ' required />
                                 <input className='bg-[#f5f5f5] py-3 pl-4' type="text" name="" id="" placeholder='Your Email *' required />
                                 <input className='bg-[#f5f5f5] py-3 pl-4' type="text" name="" id="" placeholder='Your Phone *' required />
                             </div>
