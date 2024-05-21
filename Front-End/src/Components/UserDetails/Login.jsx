@@ -1,6 +1,6 @@
 import React from 'react'
-import * as Images from '../../assets/Images/img.js'
 
+import * as Images from '../../assets/Images/img.js'
 
 function Login() {
   return (

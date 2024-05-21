@@ -1,5 +1,12 @@
 export {default as Login} from './Login.jpg'
 export {default as Hero} from './hero.jpeg'
+export {default as Monitor} from './Monitor.png'
+export {default as Gamepad} from './gamepad.png'
+export {default as Bag} from './Bag.png'
+export {default as Jacket} from './jacket.png'
+export {default as Game} from './game.png'
+export {default as Eye} from './eye.png'
+
 export {default as AboutHero} from './AboutHero.jpg'
 export {default as client1} from './client1.png'
 export {default as client2} from './client2.png'
@@ -14,4 +21,17 @@ export {default as icon7} from './icon7.png'
 export {default as App} from './App.png'
 export {default as Goggle} from './Goggle.png'
 export {default as QrCode} from './QrCode.png'
+export {default as image1} from './image1.png'
+export {default as image2} from './image2.png'
+export {default as image3} from './image3.png'
+export {default as image4} from './image4.png'
+export {default as slider2} from './slider2.png'
+export {default as slider3} from './slider3.png'
+export {default as slider4} from './slider4.png'
+export {default as slider5} from './slider5.png'
+export {default as slider1} from './slider1.png'
+
+
+
+
  
