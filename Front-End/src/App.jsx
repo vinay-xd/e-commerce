@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Components/UserDetails/Login.jsx'
@@ -14,6 +14,9 @@ import Footer from './Components/Footer/Footer.jsx';
 import About from './Components/Pages/About.jsx';
 import Checkout from './Components/SaveProduct/Checkout.jsx';
 import Homepage from './Components/Pages/Homepage.jsx';
+import { Products, MyContext } from './Components/Data/Contex.js';
+import Homepage from './Components/Pages/Homepage.jsx';
+import SingleProduct from './Components/Products/SingleProduct.jsx';
 
 
 function App() {
@@ -77,7 +80,20 @@ function App() {
         <Topbar />
         <Navbar />
         {/* <Wishlist data={data} /> */}
+
+
+  console.log(Products);
+  return (
+    <>
+
+      
+    <MyContext.Provider value={{Products}}>
+      <Router>
+      <Topbar />
+      <Navbar />
+      
         <Routes>
+          <Route path='/' element={<Homepage />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/cart' element={<Cart />} />
@@ -88,10 +104,14 @@ function App() {
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/' element={<Homepage/>} />
           
+          <Route path='/wishlist' element={<Wishlist />}  />
+          <Route path='/about' element={<About />} />
+          <Route path='/singleProduct/:id' element={<SingleProduct />} />
         </Routes>
         <Footer />
 
       </Router>
+      </MyContext.Provider>
 
     </>
   )

@@ -1,0 +1,12 @@
+.CusPlaceHolder{
+    position: relative;
+}
+.CusPlaceHolder::after {
+    content: 'hello';
+    color: #db4444;
+    /* position: absolute; */
+    z-index: 10;
+    top: -10px;
+    right: 0px;
+
+}

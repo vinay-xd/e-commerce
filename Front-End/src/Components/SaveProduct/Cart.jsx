@@ -28,7 +28,7 @@ function Cart() {
                                 <div className='flex justify-between  py-6 px-10 shadow-md rounded w-[100%] mb-10'>
                                     <div className='flex w-[25%] text-center '>
                                         <div className=' relative W-[54px] h-[54px]'>
-                                            <img src={Images.Monitor} alt="" />
+                                            <img className='w-[100%] h-[100%]' src={Images.Monitor} alt="" />
                                             <span className=' absolute text-[18px] text-[#db4444] -top-[10px] -left-[10px] z-10'><IoMdCloseCircle /></span>
                                         </div>
                                         <div className='ml-5'>LCD Monitor</div>
