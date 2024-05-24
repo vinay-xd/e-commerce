@@ -167,7 +167,7 @@ export const Products = [
     {
         id: 17,
         imgurl: [Images.Gamepad1, Images.Gamepad2, Images.Gamepad3, Images.Gamepad4, Images.Gamepad5],
-        title: "Quilted Satin Jacket",
+        title: "White GamePad",
         description: '',
         price: '$660',
         rating: '4.5',

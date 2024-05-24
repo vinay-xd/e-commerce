@@ -93,8 +93,9 @@ function Homepage() {
           <div className='BestSCon mt-[60px] w-[1170px] overflow-hidden'>
             <div className='flex justify-between '>
               {
-                bestSelling.map((item) => (
+                bestSelling.map((item, index) => (
                   <>
+                  <Link to={`/singleProduct/${bestSelling[index].id}`}>
                     <BestSCard
                       key={item.id}
                       imgurl={item.imgurl}
@@ -104,7 +105,7 @@ function Homepage() {
                       rating={item.rating}
 
                     />
-
+                </Link>
                   </>
                 ))
               }
@@ -172,7 +173,7 @@ function Homepage() {
                       <Link to={`/singleProduct/${Products[cardIndex].id}`}>
                         <Card
                         key={Products[cardIndex].id}
-                        imgurl={Products[cardIndex].imgurl}
+                        imgurl={Products[cardIndex].imgurl[0]}
                         title={Products[cardIndex].title}
                         price={Products[cardIndex].price}
                         review={Products[cardIndex].review}
