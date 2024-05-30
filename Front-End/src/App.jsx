@@ -15,7 +15,6 @@ import About from './Components/Pages/About.jsx';
 import Checkout from './Components/SaveProduct/Checkout.jsx';
 import Homepage from './Components/Pages/Homepage.jsx';
 import { Products, MyContext } from './Components/Data/Contex.js';
-import Homepage from './Components/Pages/Homepage.jsx';
 import SingleProduct from './Components/Products/SingleProduct.jsx';
 
 
@@ -76,15 +75,7 @@ function App() {
   ]
   return (
     <>
-      <Router>
-        <Topbar />
-        <Navbar />
-        {/* <Wishlist data={data} /> */}
 
-
-  console.log(Products);
-  return (
-    <>
 
       
     <MyContext.Provider value={{Products}}>
@@ -101,11 +92,7 @@ function App() {
           <Route path='/*' element={<Error />} />
           <Route path='/wishlist' element={<Wishlist data={data} />} />
           <Route path='/about' element={<About />} />
-          <Route path='/checkout' element={<Checkout />} />
-          <Route path='/' element={<Homepage/>} />
-          
-          <Route path='/wishlist' element={<Wishlist />}  />
-          <Route path='/about' element={<About />} />
+          <Route path='/checkout' element={<Checkout />} />          
           <Route path='/singleProduct/:id' element={<SingleProduct />} />
         </Routes>
         <Footer />
