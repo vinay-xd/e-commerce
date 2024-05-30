@@ -56,9 +56,11 @@ function Navbar() {
               <span className="text-black hover:text-gray-300">
                 <CiHeart size={30} />
               </span>
+              <Link to={'/cart'}>
               <span className="text-black  hover:text-gray-300">
                 <IoCartOutline size={30} />
               </span>
+              </Link>
             </div>
           </div>
 
@@ -75,3 +77,13 @@ function Navbar() {
 
 
 export default Navbar
+
+
+
+
+
+
+
+
+
+

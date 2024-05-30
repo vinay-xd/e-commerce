@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 function Signup() {
   return (
     <>
-    <div className='Login-container w-[1305px] h-[781px] flex justify-between mt-[200px] mx-auto'>
-      <div className='LoginImgCon w-[805px] h-[781px]'>
+    <div className='w-[500px] lg:w-[1305px] lg:h-[781px] lg:flex lg:justify-between mt-[50px] lg:mt-[200px] bg-red-200 mx-auto'>
+      <div className='SignupImgCon w-[400px] lg:w-[805px] lg:h-[781px] mx-auto'>
         <img className='w-[100%] h-[100%] object-cover' src={Images.Login} alt="" />
       </div>
-      <div className='LoginDetails w-[371px] my-auto leading-6'>
+      <div className='LoginDetails w-[400px] lg:w-[371px] my-[50px] lg:my-auto leading-6 mx-auto'>
         <div className='mb-12'>
           <h3 className='text-[36px] mb-8 font-[500] tracking-wider'>Create an account</h3>
           <p className='text-[16px] '>Enter your details below</p>

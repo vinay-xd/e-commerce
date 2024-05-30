@@ -1,13 +1,10 @@
-import React from 'react'
+
 import { RiArrowDropRightLine } from "react-icons/ri";
 import * as Images from '../../assets/Images/img.js'
 import { GoArrowRight } from "react-icons/go";
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { GrPrevious } from "react-icons/gr";
 import { FcNext } from "react-icons/fc";
 import React, { useContext, useEffect, useState } from 'react'
-import * as Images from '../../assets/Images/img.js'
 import Card from '../Card/Card.jsx'
 import { MyContext } from '../Data/Contex.js'
 import { IoIosArrowRoundBack, IoIosArrowRoundForward, IoIosArrowRoundUp } from "react-icons/io";
@@ -18,10 +15,7 @@ import { Link } from 'react-router-dom'
 import { GoCircle } from "react-icons/go";
 
 function Homepage() {
-
   const [number, setNumber] = useState(0)
-  
-
   const images = [
     { id: 1, src: Images.slider1 },
     { id: 2, src: Images.slider2 },
@@ -29,7 +23,6 @@ function Homepage() {
     { id: 4, src: Images.slider4 },
     { id: 5, src: Images.slider5 }
   ];
-
   const handleNext = () => {
     if (number === images.length - 1) {
       setNumber(0)
@@ -38,7 +31,6 @@ function Homepage() {
       setNumber(number + 1)
     }
   }
-
   const handlePrev = () => {
     if (number === 0) {
       setNumber(images.length - 1)
@@ -48,7 +40,9 @@ function Homepage() {
 
     }}
 
-  const { Products } = useContext(MyContext)
+
+
+  const { Products, addtokart } = useContext(MyContext)
   // console.log(Products);
 
   const [Slide, setslide] = useState(0);
@@ -59,13 +53,11 @@ function Homepage() {
     setslide((Slide - 1 + Products.length) % Products.length)
   };
 
-
   const [bestSelling, setbestSelling] = useState([])
   useEffect(() => {
     setbestSelling(Products.filter((currentdata) => currentdata.BestSelling === true))
   }, [])
   // console.log(bestSelling);
-
 
   const [countDown, setcountDown] = useState({
     days: '',
@@ -118,6 +110,7 @@ function Homepage() {
     }
 
 
+
   return (
     <>
 
@@ -165,6 +158,10 @@ function Homepage() {
         </div>
 
       </section>
+       
+       
+       
+       
         {isVisible && (<div className=' fixed bottom-[32px] right-[32px] w-[46px] h-[46px] rounded-[50%] z-50 bg-[#f5f5f5] text-[34px] text-center py-[4px]'>
           <button onClick={scrollToTop} ><IoIosArrowRoundUp /></button>
         </div>)}
@@ -181,22 +178,23 @@ function Homepage() {
             </div>
           </div>
 
-          <div className='BestSCon mt-[60px] w-[1170px] overflow-hidden'>
+          <div className='BestSCon mt-[60px] w-[1170px] lg:overflow-hidden'>
             <div className='flex justify-between '>
               {
                 bestSelling.map((item, index) => (
                   <>
-                  <Link to={`/singleProduct/${bestSelling[index].id}`}>
+                  
                     <BestSCard
                       key={item.id}
                       imgurl={item.imgurl}
-                      title={item.title}
+                       title={item.title}
                       price={item.price}
                       review={item.review}
                       rating={item.rating}
-
+                      link = {bestSelling[index].id}
+                      shopinglist={() => addtokart(index)}
                     />
-                </Link>
+               
                   </>
                 ))
               }
@@ -253,7 +251,7 @@ function Homepage() {
             </div>
           </div>
 
-          <div className='ProductCon mt-[60px] w-[1170px] overflow-hidden h-[732px]'>
+          <div className='ProductCon mt-[60px] w-[1170px] lg:overflow-hidden h-[732px]'>
             <div className='flex justify-between flex-wrap  '>
               {
                 Products.map((_, index) => {
@@ -261,16 +259,18 @@ function Homepage() {
                   return <>
                     <div className='mb-[60px]' key={cardIndex}>
 
-                      <Link to={`/singleProduct/${Products[cardIndex].id}`}>
+                      
                         <Card
                         key={Products[cardIndex].id}
                         imgurl={Products[cardIndex].imgurl[0]}
                         title={Products[cardIndex].title}
                         price={Products[cardIndex].price}
                         review={Products[cardIndex].review}
-                        rating={Products[cardIndex].rating}
+                        shopinglist={() => addtokart(cardIndex)}
+                        link={Products[cardIndex].id}
+
                       />
-                      </Link>
+                      
                     </div>
                   </>
                 })
@@ -290,7 +290,7 @@ function Homepage() {
 
 
       <section className='Feature sec6 '>
-        <div className='Main w-[1170px] mx-auto my-[140px]'>
+        <div className='Main w-[500px] lg:w-[1170px] mx-auto my-[50px] lg:my-[140px]'>
           <div className='sec6HCon'>
 
             <p className='font-[600] before:content-[" "] before:bg-[#db4444] before:p-3 before:mr-4 before:rounded-md text-[#db4444]'>Featured</p>
@@ -298,30 +298,30 @@ function Homepage() {
 
           </div>
 
-          <div className='sec6ImgCon mt-[60px] flex justify-between'>
-            <div className='w-[570px] h-[600px] pt-[90px] px-8 overflow-hidden rounded' style={{ backgroundSize: 'cover', backgroundColor: '#000' }}>
-              <div className='w-[511px] h-[511px] relative' style={{ backgroundImage: `url(${Images.SonyPs5})`, backgroundSize: 'cover' }}>
-                <div className='w-[242px] text-[#fff] absolute left-0 bottom-[32px] '>
+          <div className='sec6ImgCon mt-[30px] lg:mt-[60px] lg:flex lg:justify-between'>
+            <div className='w-[250px] h-[300px] lg:w-[570px] lg:h-[600px] pt-[30px] lg:pt-[90px] px-3 lg:px-8 lg:overflow-hidden rounded' style={{ backgroundSize: 'cover', backgroundColor: '#000' }}>
+              <div className='w-[220px] lg:w-[511px] h-[250px] lg:h-[511px] relative' style={{ backgroundImage: `url(${Images.SonyPs5})`, backgroundSize: 'cover' }}>
+                <div className='w-[110px] lg:w-[242px] text-[#fff] absolute left-0 bottom-[14px] lg:bottom-[32px] '>
                   <h3 className='text-[24px] font-[500] font-[Inter] mb-4'>PlayStation 5</h3>
                   <p className='text-[14px] opacity-85'>Black and White version of the PS5 coming out on sale.</p>
-                  <button className='font-[500] mt-4 border-b-[2px] border-[#fff5]'>Shop Now</button>
+                  <button className='font-[500] mt-2 lg:mt-4 border-b-[2px] border-[#fff5]'>Shop Now</button>
                 </div>
               </div>
             </div>
 
             <div>
-              <div className='w-[570px] h-[284px] relative pl-[138px] overflow-hidden rounded' style={{ backgroundSize: 'cover', backgroundColor: '#000' }}>
-                <div className='w-[432px] h-[284px]' style={{ backgroundImage: `url(${Images.BlackHat})`, backgroundSize: 'cover' }}>
-                  <div className='w-[242px] text-[#fff] absolute left-[24px] bottom-[24px] '>
+              <div className=' w-[250px] lg:w-[570px] h-[142px] lg:h-[284px] relative pl-[70px] lg:pl-[138px] lg:overflow-hidden rounded' style={{ backgroundSize: 'cover', backgroundColor: '#000' }}>
+                <div className='w-[190px] lg:w-[432px] h-[142px] lg:h-[284px]' style={{ backgroundImage: `url(${Images.BlackHat})`, backgroundSize: 'cover' }}>
+                  <div className='w-[100px] lg:w-[242px] text-[#fff] absolute left-[10px] lg:left-[24px] bottom-[10px] lg:bottom-[24px] '>
                     <h3 className='text-[24px] font-[500] font-[Inter] mb-3'>Women’s Collections</h3>
                     <p className='text-[14px] opacity-85'>Featured woman collections that give you another vibe.</p>
-                    <button className='font-[500] mt-4 border-b-[2px] border-[#fff5]'>Shop Now</button>
+                    <button className='font-[500] mt-2 lg:mt-4 border-b-[2px] border-[#fff5]'>Shop Now</button>
                   </div>
                 </div>
               </div>
 
-              <div className='flex justify-between mt-8'>
-                <div className='w-[270px] h-[284px] relative p-9 overflow-hidden rounded' style={{ backgroundImage: 'radial-gradient(#444 15%, #111 70%)' }}>
+              <div className='flex justify-between mt-3 lg:mt-8'>
+                <div className='w-[250px] lg:w-[270px] h-[250px] lg:h-[284px] relative lg:p-9 lg:overflow-hidden rounded' style={{ backgroundImage: 'radial-gradient(#444 15%, #111 70%)' }}>
                   <div className='w-[190px] h-[222px]' style={{ backgroundImage: `url(${Images.AlexaSpeaker})`, backgroundSize: 'cover' }}>
                     <div className='w-[242px] text-[#fff] absolute left-[24px] bottom-[24px] '>
                       <h3 className='text-[24px] font-[500]  font-[Inter] '>Speakers</h3>
@@ -331,7 +331,7 @@ function Homepage() {
                   </div>
                 </div>
 
-                <div className='w-[270px] h-[284px] relative p-9 overflow-hidden rounded' style={{ backgroundImage: 'radial-gradient(#444 15%, #111 70%)' }}>
+                <div className='w-[250px] lg:w-[270px] lg:h-[284px] relative lg:p-9 lg:overflow-hidden rounded' style={{ backgroundImage: 'radial-gradient(#444 15%, #111 70%)' }}>
                   <div className='w-[201px] h-[203px]' style={{ backgroundImage: `url(${Images.GucciPerfume})`, backgroundSize: 'cover' }}>
                     <div className='w-[242px] text-[#fff] absolute left-[24px] bottom-[24px] '>
                       <h3 className='text-[24px] font-[500]  font-[Inter] '>Perfume</h3>
@@ -347,8 +347,8 @@ function Homepage() {
       </section>
 
       <section className='trust badges sec7 font-[Poppins]'>
-        <div className="w-[943px] mx-auto my-[140px] flex justify-between  ">
-          <div>
+        <div className="w-[300px] lg:w-[943px] mx-auto my-[50px] lg:my-[140px] lg:flex md:justify-between  ">
+          <div className="mt-[40px] lg:mt-0">
             <div className="w-[80px] h-[80px] mx-auto rounded-[50%] ">
               <img src={Images.icon5} alt="" />
             </div>
@@ -358,7 +358,7 @@ function Homepage() {
             </div>
           </div>
 
-          <div>
+          <div className="mt-[40px] lg:mt-0">
             <div className="w-[80px] h-[80px] mx-auto rounded-[50%] ">
               <img src={Images.icon6} alt="" />
             </div>
@@ -368,7 +368,7 @@ function Homepage() {
             </div>
           </div>
 
-          <div>
+          <div className="mt-[40px] lg:mt-0">
             <div className="w-[80px] h-[80px] mx-auto rounded-[50%] ">
               <img src={Images.icon7} alt="" />
             </div>

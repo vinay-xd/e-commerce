@@ -59,7 +59,7 @@ function SingleProduct() {
                                     </div>
                                     <p className='text-[#00ff66] text-[14px]'>In Stock</p>
                                 </div>
-                                <p className='text-[24px] font-[500] mt-3'>{singleProduct.price}</p>
+                                <p className='text-[24px] font-[500] mt-3'>${singleProduct.price}</p>
                                 <p className='text-[14px]'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</p>
                             </div>
                             <div className='mt-6'>
