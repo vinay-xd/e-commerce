@@ -4,14 +4,9 @@ export {default as Login} from './Login.jpg'
 export {default as Hero} from './hero.jpeg'
 export {default as Monitor} from './Monitor.png'
 export {default as Gamepad} from './gamepad.png'
-<<<<<<< HEAD
-export {default as Bag} from './Bag.png'
-export {default as Jacket} from './jacket.png'
-=======
 export {default as GucciBag} from './Gucci-Bag.png'
 export {default as GucciPerfume} from './Gucci-perfume.png'
 export {default as GreenJacket} from './Green-jacket.png'
->>>>>>> 4f958286ba1f4c0f478eb908d57ab90ae2b6e1eb
 export {default as Game} from './game.png'
 export {default as YellowShoes} from './Copa_Sense 1.png'
 export {default as Cream} from './Cream.png'
@@ -35,7 +30,6 @@ export {default as icon5} from './icon5.png'
 export {default as icon6} from './icon6.png'
 export {default as icon7} from './icon7.png'
 export {default as QrCode} from './QrCode.png'
-<<<<<<< HEAD
 export {default as image1} from './image1.png'
 export {default as image2} from './image2.png'
 export {default as image3} from './image3.png'
@@ -49,7 +43,6 @@ export {default as slider1} from './slider1.png'
 
 
 
-=======
 export {default as client1} from './client1.png'
 export {default as client2} from './client2.png'
 export {default as client3} from './client3.png'
@@ -58,5 +51,4 @@ export {default as Gamepad2} from './image 58.png'
 export {default as Gamepad3} from './image 59.png'
 export {default as Gamepad4} from './image 61.png'
 export {default as Gamepad5} from './image 63.png'
->>>>>>> 4f958286ba1f4c0f478eb908d57ab90ae2b6e1eb
  

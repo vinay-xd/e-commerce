@@ -32,6 +32,40 @@ function Navbar() {
             </ul>
           </div>
 
+
+
+
+          <div className="flex items-center justify-between gap-[24px] w-[347px] h-[38px] ">
+
+            <div className='flex bg-gray-200 w-[243px] mr-[20px]  h-[38px] gap-[10px] pl-[7px] pt-[12px] pr-[7px] pb-[20px] rounded'>
+
+              <input
+                type="search"
+                name="search"
+                placeholder="What are you looking for?"
+                className="text-[12px]  w-[80%] font-[400] leading-[18px] pb-[7px] pt-[7px]  pl-[10px] bg-gray-200 "
+
+              />
+              <div className='w-[24px] h-[24px]'>
+                <CiSearch />
+              </div>
+
+            </div>
+            <div className='w-[80] h-[32] ml-[10px] flex gap-[16px]' >
+              <span className="text-black hover:text-gray-300">
+                <CiHeart size={30} />
+              </span>
+              <Link to={'/cart'}>
+              <span className="text-black  hover:text-gray-300">
+                <IoCartOutline size={30} />
+              </span>
+              </Link>
+            </div>
+          </div>
+
+
+
+
         </div>
 
 
@@ -76,3 +110,13 @@ function Navbar() {
 
 
 export default Navbar
+
+
+
+
+
+
+
+
+
+

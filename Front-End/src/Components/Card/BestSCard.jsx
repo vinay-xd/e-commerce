@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { CiHeart } from "react-icons/ci";
 import { IoEyeOutline } from "react-icons/io5";
+import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
 
-function BestSCard({imgurl, title, price, rating, review, crossprice}) {
+function BestSCard({imgurl, title, price, rating, review, crossprice, link, shopinglist}) {
 
   return (
     <>
@@ -13,17 +15,19 @@ function BestSCard({imgurl, title, price, rating, review, crossprice}) {
             <i className='bg-white rounded-[50%] w-[34px] h-[34px] p-[7px]' ><CiHeart /></i>
             <i className='bg-white rounded-[50%] w-[34px] h-[34px] p-[7px]'><IoEyeOutline /></i>
           </div>
-          <button className='absolute -bottom-10 bg-[#000] group-hover:bottom-0 transition-all duration-[450ms] ease-in-out text-[#fff] rounded w-[270px] text-center font-[500] p-2'>Add To Cart</button>
+          <button className='absolute -bottom-10 bg-[#000] group-hover:bottom-0 transition-all duration-[450ms] ease-in-out text-[#fff] rounded w-[270px] text-center font-[500] p-2' onClick={shopinglist}>Add To Cart</button>
       </div>
       <div className='DecCon'>
+      <Link to={`/singleProduct/${link}`}>
         <h3>{title}</h3>
+        </Link>
         <div className='flex '>
-          <p>{price}</p>
+          <p>${price}</p>
           <p>{crossprice}</p>
           
         </div>
         <div className='flex '>
-          <p>{rating}</p>
+        <p className='flex text-[#ffad33] pt-[2px] mr-2'> < IoIosStar />< IoIosStar />< IoIosStar />< IoIosStar />< IoIosStarOutline/></p>
           <p>{review}</p>
         </div>
       </div>
